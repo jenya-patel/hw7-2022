@@ -3,9 +3,10 @@ var video;
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
 	video=document.getElementById("#player1");
+	console.log(video);
 	video.autoplay=false;
 	video.loop=false;
-	video.load();
+	// video.load();
 
 });
 
