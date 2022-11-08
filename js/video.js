@@ -2,7 +2,7 @@ var video;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
-	video=document.getElementById("player1");
+	video=document.getElementById("#player1");
 	video.autoplay=false;
 	video.loop=false;
 	video.load();
@@ -11,9 +11,9 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video!");
+	//var volume=document.getElementById("#slider").value;
+	document.querySelector("#volume").innerHTML=video.volume*100+"%";
 	video.play();
-	var volume=document.getElementById("#slider").value;
-	document.getElementById("#volume").innerHTML=volume+"%";
 });
 
 document.querySelector("#pause").addEventListener("click", function(){
