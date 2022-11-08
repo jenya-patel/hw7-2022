@@ -16,7 +16,7 @@ document.querySelector("#play").addEventListener("click", function() {
 	document.getElementById("volume").innerHTML=volume+"%";
 });
 
-document.querySelector(#pause).addEventListener("click", function(){
+document.querySelector("#pause").addEventListener("click", function(){
 	console.log("pause video");
 	video.pause();
 });
@@ -34,9 +34,9 @@ document.querySelector("#faster").addEventListener("click", function(){
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
-	video.classList.add('oldSchool')
+	video.classList.add('oldSchool');
 });
 
 document.querySelector("#orig").addEventListener("click", function() {
-	video.classList.remove('oldSchool')
+	video.classList.remove('oldSchool');
 });
