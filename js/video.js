@@ -26,3 +26,9 @@ document.querySelector("#slower").addEventListener("click", function(){
 	video.playbackRate *= 0.9;
 	console.log("video playback rate" + video.playbackRate);
 });
+
+document.querySelector("#faster").addEventListener("click", function(){
+	console.log("Speed quick");
+	video.playbackRate /= 0.9;
+	console.log("video playback rate" + video.playbackRate);
+});
