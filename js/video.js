@@ -2,7 +2,7 @@ var video;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
-	video=document.getElementById("#player1");
+	video=document.getElementById("player1");
 	console.log(video);
 	video.autoplay=false;
 	video.loop=false;
@@ -11,33 +11,58 @@ window.addEventListener("load", function() {
 });
 
 document.querySelector("#play").addEventListener("click", function() {
-	console.log("Play Video!");
-	//var volume=document.getElementById("#slider").value;
-	document.querySelector("#volume").innerHTML=video.volume*100+"%";
+	console.log("Play Video");
+	var volume=document.getElementById("slider").value;
+	document.querySelector("#volume").innerHTML=volume+"%";
 	video.play();
 });
 
 document.querySelector("#pause").addEventListener("click", function(){
-	console.log("pause video");
+	console.log("Pause Video");
 	video.pause();
 });
 
 document.querySelector("#slower").addEventListener("click", function(){
-	console.log("Slow down");
+	console.log("Slow Down");
 	video.playbackRate *= 0.9;
 	console.log("video playback rate" + video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function(){
-	console.log("Speed quick");
+	console.log("Speed Up");
 	video.playbackRate /= 0.9;
 	console.log("video playback rate" + video.playbackRate);
 });
 
+// skip ahead
+// document.querySelector("#skip").addEventListener("click", function(){
+// 	console.log("Skip Ahead");
+// });
+
+// mute
+document.querySelector("#mute").addEventListener("click", function(){
+	console.log("Mute");
+	if (video.muted === false) {    
+		video.muted = true;
+		document.getElementById("mute").innerHTML= "Unmute";
+	}
+	else {
+		video.muted = false;
+		document.getElementById("mute").innerHTML= "Mute";
+	};
+});
+// volume slider
+document.querySelector("#slider").addEventListener("click", function(){
+	console.log("Change volume");
+	// document.getElementById("volume").innerHTML=.value+"%";
+});
+
+// styled
 document.querySelector("#vintage").addEventListener("click", function() {
 	video.classList.add('oldSchool');
 });
 
+// original
 document.querySelector("#orig").addEventListener("click", function() {
 	video.classList.remove('oldSchool');
 });
