@@ -52,9 +52,11 @@ document.querySelector("#mute").addEventListener("click", function(){
 	};
 });
 // volume slider
-document.querySelector("#slider").addEventListener("click", function(){
-	console.log("Change volume");
-	// document.getElementById("volume").innerHTML=.value+"%";
+document.querySelector("#slider").addEventListener("change", function(){
+	console.log("Change volume", video.volume);
+	video.volume = this.value/100;
+	console.log("New volume", video.volume);
+	document.getElementById("volume").innerHTML= video.volume*100+"%";
 });
 
 // styled
