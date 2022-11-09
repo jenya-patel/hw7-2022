@@ -35,9 +35,19 @@ document.querySelector("#faster").addEventListener("click", function(){
 });
 
 // skip ahead
-// document.querySelector("#skip").addEventListener("click", function(){
-// 	console.log("Skip Ahead");
-// });
+document.querySelector("#skip").addEventListener("click", function(){
+ 	console.log("Skip Ahead");
+	video.currentTime += 10;
+	if(video.currentTime + 10 > video.duration) {
+		video.currentTime = 0;
+		video.play();	
+	}
+	else {
+		video.currentTime += 10;
+		video.play();
+	    console.log(video.currentTime);
+	}
+});
 
 // mute
 document.querySelector("#mute").addEventListener("click", function(){
